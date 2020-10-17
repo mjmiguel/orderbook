@@ -1,12 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
 
-const App = () => {
+export interface IAppProps {}
+
+function IApp(props: IAppProps) {
   return (
     <>
-      <h1>hello world</h1>
+      <h1>Hello there</h1>
     </>
-  )
+  );
 }
 
 export default hot(App);

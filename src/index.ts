@@ -3,4 +3,10 @@ import { render } from 'react-dom';
 import App from './App';
 
 const mountNode = document.getElementById('root');
-render(<App />, mountNode);
+
+const Index = () => {
+  return <App />;
+}
+
+render(<Index />, mountNode);
+
