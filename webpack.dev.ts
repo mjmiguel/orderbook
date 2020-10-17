@@ -1,7 +1,6 @@
-import * as webpack from 'webpack';
-// import for devServer types
-import * as webpackDevServer from 'webpack-dev-server';
 import path from 'path';
+import * as webpack from 'webpack';
+import * as webpackDevServer from 'webpack-dev-server';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: webpack.Configuration = {
@@ -34,7 +33,7 @@ const config: webpack.Configuration = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.json', '.ts', '.tsx'],
     // alias per https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
     alias: {
       'react-dom': '@hot-loader/react-dom',

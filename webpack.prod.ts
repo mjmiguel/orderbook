@@ -1,8 +1,9 @@
-import * as path from "path";
-import * as webpack from "webpack";
-import * as HtmlWebPackPlugin from "html-webpack-plugin";
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: webpack.Configuration = {
+  mode: 'production',
   entry: ['react-hot-loader/patch', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -35,7 +36,7 @@ const config: webpack.Configuration = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', ',json', '.ts', '.tsx'],
     // alias per https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
     alias: {
       'react-dom': '@hot-loader/react-dom',
