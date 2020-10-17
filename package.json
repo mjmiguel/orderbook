@@ -15,7 +15,8 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "sass": "^1.27.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

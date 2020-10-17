@@ -1,7 +1,6 @@
 import React from 'react';
-// Components
-import BuyContainer from './components/containers/BuyContainer';
-import SellContainer from './components/SellContainer';
+import BuyContainer from './containers/BuyContainer';
+import SellContainer from './containers/SellContainer';
 
 export interface AppProps {}
 
