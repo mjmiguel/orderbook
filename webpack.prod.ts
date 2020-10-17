@@ -4,7 +4,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: webpack.Configuration = {
   mode: 'production',
-  entry: ['react-hot-loader/patch', './src/index.js'],
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -15,7 +15,7 @@ const config: webpack.Configuration = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
+          loader: 'awesome-typescript-loader',
         },
       },
       {
@@ -37,10 +37,6 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.js', ',json', '.ts', '.tsx'],
-    // alias per https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
   },
   plugins: [
     new HtmlWebpackPlugin({

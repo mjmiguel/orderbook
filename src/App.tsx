@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { hot } from 'react-hot-loader/root';
+// import { hot } from 'react-hot-loader/root';
 
-export interface IAppProps {}
+export interface AppProps {}
 
-function IApp(props: IAppProps) {
+function App(props: AppProps) {
   return (
     <>
       <h1>Hello there</h1>
@@ -11,4 +11,4 @@ function IApp(props: IAppProps) {
   );
 }
 
-export default hot(App);
+export default App;

@@ -5,14 +5,14 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: webpack.Configuration = {
   mode: 'development',
-  entry: ['react-hot-loader/patch', './src/index.ts'],
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
+          loader: 'awesome-typescript-loader',
         },
       },
       {
@@ -34,10 +34,6 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.js', '.json', '.ts', '.tsx'],
-    // alias per https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
