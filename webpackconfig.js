@@ -10,10 +10,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
         },
       },
       {
@@ -35,6 +35,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    // alias per https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
     alias: {
       'react-dom': '@hot-loader/react-dom',
     },
