@@ -1,0 +1,11 @@
+# npm
+node_modules
+
+# system files
+
+
+# secrets
+.env
+
+# dist
+dist/
