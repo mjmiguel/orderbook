@@ -1,6 +1,6 @@
-import * as path from 'path';
-import * as webpack from 'webpack';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: webpack.Configuration = {
   mode: 'production',

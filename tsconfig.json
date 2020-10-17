@@ -6,7 +6,8 @@
 		"lib": ["es5", "es6", "dom"],
 		"jsx": "react",
 		"allowJs": true,
-    "moduleResolution": "node",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
     "typeRoots" : ["./node_modules/@types"],
 	}
 }
