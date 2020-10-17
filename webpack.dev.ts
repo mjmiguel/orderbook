@@ -1,4 +1,4 @@
-import path from 'path';
+import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackDevServer from 'webpack-dev-server';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
