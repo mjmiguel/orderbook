@@ -1,5 +1,7 @@
 import React from 'react';
-import BuyContainer from './components/BuyContainer';
+// Components
+import BuyContainer from './components/containers/BuyContainer';
+import SellContainer from './components/SellContainer';
 
 export interface AppProps {}
 
@@ -8,6 +10,7 @@ function App(props: AppProps) {
     <>
       <h1>Hello there</h1>
       <BuyContainer />
+      <SellContainer />
     </>
   );
 }

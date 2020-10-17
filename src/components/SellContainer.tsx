@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-type BuyProps = {};
+type SellProps = {};
 
-const BuyContainer = (props: BuyProps) => {
+const SellContainer:FC = (props: SellProps) => {
   return (
     <>
-      <h1>Buy Container</h1>
+      <h1>Sell Container</h1>
       <div>
         <ul>
           <li>onething</li>
@@ -18,4 +18,4 @@ const BuyContainer = (props: BuyProps) => {
 
 }
 
-export default BuyContainer;
+export default SellContainer;
