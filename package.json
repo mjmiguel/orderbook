@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Combined orderbook using Bittrex and Poloniex",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --config webpack.prod.ts",
     "start": "node server/server.js",
-    "dev": "concurrently \"nodemon ./server/server/js\" \"webpack-dev-server --open --inline --colors --hot --mode development\"",
+    "dev": "concurrently \"nodemon ./server/server/js\" \"webpack-dev-server --open --inline --colors --hot --mode development --config webpack.dev.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mjmguel",
