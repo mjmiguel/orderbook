@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"noImplicitAny": true,
+		"target": "es6",
+		"lib": ["es5", "es6", "dom"],
+		"jsx": "react",
+		"allowJs": true,
+    "moduleResolution": "node",
+    "typeRoots" : ["./node_modules/@types"],
+	}
+}
