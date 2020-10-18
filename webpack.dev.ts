@@ -46,7 +46,7 @@ const config: webpack.Configuration = {
     contentBase: path.join(__dirname, 'dist'),
     proxy: [
       {
-        context: '/api',
+        context: ['/api'],
         target: 'http://localhost:3000',
       },
     ],

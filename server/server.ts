@@ -2,7 +2,6 @@ import path from 'path';
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 
 import apiRouter from './routes/apiRouter';
-// const apiRouter = require('./routes/apiRouter');
 
 require('dotenv').config();
 

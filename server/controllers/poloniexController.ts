@@ -1,9 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import io from 'socket.io-client';
 
 // const poloniexController = {};
-
-
+const WebSocket = require('ws');
+ 
 
 /* ----- Poloniex API format ----- */
 // URL: ws wss://api2.poloniex.com
@@ -12,14 +11,17 @@ import io from 'socket.io-client';
 const poloniexController = {
   
   getBooks: (req: Request, res: Response, next: NextFunction): void => {
+    console.log('got to getbooks')
   // add variable for different exchanges
     try {
-      const socket = io('wss://api2.poloniex.com', {
-        reconnectionDelayMax: 10000,
-      })
-      socket.on('connect', () => {
-        console.log('Socket connected is ', socket.connected);
-        next();
+      const ws = new WebSocket('wss://api2.poloniex.com');
+
+      ws.on('open', function open() {
+        ws.send(JSON.stringify({"command": "subscribe", "channel": "BTC_ETH"}));
+      });
+       
+      ws.on('message', function incoming(data:any) {
+        console.log(data);
       });
     } catch (e) {
       next(e);
