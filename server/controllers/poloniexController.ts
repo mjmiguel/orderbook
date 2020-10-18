@@ -17,8 +17,16 @@ interface processedData {
   ask: exchangeObject[]
 }
 
+
+// Response object from Bittrex API
+interface apiResponseObject {
+  bids: (string | number)[][],
+  asks: (string | number)[][],
+}
+
+
 // Compose new object from data recieved from API
-const processResponse = (jsonObj:any): processedData  => {
+const processResponse = (jsonObj: apiResponseObject): processedData  => {
   let resultObj: processedData = {
     bid: [],
     ask: []
@@ -32,7 +40,7 @@ const processResponse = (jsonObj:any): processedData  => {
         quantity: 0,
         price: 0
       }
-      exchangeObj.exchange = 'poloniex';
+      exchangeObj.exchange = 'Poloniex';
       exchangeObj.quantity = Number(element[0]);
       exchangeObj.price = Number(element[1]);
       resultObj[bookType].push(exchangeObj);
