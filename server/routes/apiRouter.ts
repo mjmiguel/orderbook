@@ -1,14 +1,14 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 
 const router = Router();
 
 
 // import bittrexController from '../controllers/bittrexController';
-// import poloniexController from '../controllers/poloniexController';
+import poloniexController from '../controllers/poloniexController';
 
 
-// router.get('/', exampleController.middleware, (req, res) => {
-//   res.status(200).json({ success: true });
-// });
+router.get('/', poloniexController.getBooks, (req: Request, res: Response): void => {
+  res.status(200).json({ message: 'it works i think' });
+});
 
-// module.exports = router;
+export default router;

@@ -1,7 +1,7 @@
 import path from 'path';
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 
-
+import apiRouter from './routes/apiRouter';
 // const apiRouter = require('./routes/apiRouter');
 
 require('dotenv').config();
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
 /* ----- ROUTES ----- */
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 /* ----- CATCH-ALL ROUTE HANDLER ----- */
 app.use((req: Request, res: Response) => res.sendStatus(404));
