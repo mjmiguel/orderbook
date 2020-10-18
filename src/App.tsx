@@ -1,6 +1,5 @@
 import React from 'react';
-import BuyContainer from './containers/BuyContainer';
-import SellContainer from './containers/SellContainer';
+import Orderbook from './containers/Orderbook';
 
 export interface AppProps {}
 
@@ -8,8 +7,7 @@ function App(props: AppProps) {
   return (
     <>
       <h1>Hello there</h1>
-      <BuyContainer />
-      <SellContainer />
+      <Orderbook />
     </>
   );
 }
