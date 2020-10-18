@@ -7,7 +7,8 @@ export interface OrderbookProps {}
 
 function Orderbook(props: OrderbookProps) {
 
-  const [fullMarketData, setFullMarketData] = useState(null);
+  const [bids, setBids] = useState(null);
+  const [asks, setAsks] = useState(null);
 
   const getBooks = ():void => {
     fetch(`/api/polo`)
@@ -15,7 +16,8 @@ function Orderbook(props: OrderbookProps) {
     .then((data) => {
       console.log('got something back?', data);
       if (data.bid && data.ask) {
-        setFullMarketData(data);
+        setBids(data.bids);
+        setAsks(data.asks);
       } else {
         console.log('no data returned')
       }
@@ -24,16 +26,13 @@ function Orderbook(props: OrderbookProps) {
     })
   }
 
-  useEffect(() => {
-    console.log('useeffect fired, new data')
-  }, [fullMarketData])
   // useInterval(getBooks, 5000);
 
   return (
     <>
       <h1>ORDERBOOK</h1>
-      <BuyContainer />
-      <SellContainer />
+      <BuyContainer bids={bids} />
+      <SellContainer asks={asks}/>
     </>
   );
 }
