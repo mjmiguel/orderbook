@@ -1,22 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import fetch from 'node-fetch';
+import { exchangeObject, processedData } from '../../types/types';
 
 /* ----- Bittrex API format ----- */
 // URL: https://api.bittrex.com/v3/markets/ETH-BTC/orderbook
 // default depth is 25
-
-// New object composed from response and tagged with exchange
-interface exchangeObject {
-  exchange: string,
-  quantity: number,
-  price: number
-}
-
-// Processed response sent back to client
-interface processedData { 
-  [bid: string]: exchangeObject[],
-  ask: exchangeObject[]
-}
 
 // Response object from Bittrex API
 interface apiResponseObject {
@@ -52,7 +40,6 @@ const processResponse = (jsonObj: apiResponseObject): processedData  => {
 
   return resultObj;
 }
-
 
 const bittrexController = {
   

@@ -1,29 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import fetch from 'node-fetch';
+import { exchangeObject, processedData } from '../../types/types';
  
 /* ----- Poloniex API format ----- */
 // URL: https://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_ETH
-
-// New object composed from response and tagged with exchange
-interface exchangeObject {
-  exchange: string,
-  quantity: number,
-  price: number
-}
-
-// Processed response sent back to client
-interface processedData { 
-  [bid: string]: exchangeObject[],
-  ask: exchangeObject[]
-}
-
 
 // Response object from Bittrex API
 interface apiResponseObject {
   bids: (string | number)[][],
   asks: (string | number)[][],
 }
-
 
 // Compose new object from data recieved from API
 const processResponse = (jsonObj: apiResponseObject): processedData  => {

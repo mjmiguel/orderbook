@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
-import fetch from 'node-fetch';
+import { exchangeObject } from '../../types/types';
 
-type BuyProps = {};
+type BuyProps = {
+  bids: exchangeObject[];
+};
 
-const BuyContainer:FC = (props: BuyProps) => {
+BuyContainer.defaultProps = {
+  bids: []
+}
+
+const BuyContainer: FC<BuyProps & BuyContainer.defaultProps> = ({ bids }: BuyProps) => {
 
   return (
     <>
@@ -26,7 +32,6 @@ const BuyContainer:FC = (props: BuyProps) => {
       </div>
     </>
   );
-
 }
 
 export default BuyContainer;
