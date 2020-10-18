@@ -1,5 +1,6 @@
-const path = require('path');
-const express = require('express');
+import path from 'path';
+import express, { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
+
 
 // const apiRouter = require('./routes/apiRouter');
 
@@ -19,11 +20,11 @@ app.use('/', express.static(path.resolve(__dirname, '../dist')));
 // app.use('/api', apiRouter);
 
 /* ----- CATCH-ALL ROUTE HANDLER ----- */
-app.use((req, res) => res.sendStatus(404));
+app.use((req: Request, res: Response) => res.sendStatus(404));
 
 /* ----- GLOBAL ERROR HANDLER ----- */
 // eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
+app.use((err: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) => {
   const defaultError = {
     log: 'ERROR: handler caught unknown middleware error',
     status: 500,
