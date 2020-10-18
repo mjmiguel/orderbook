@@ -5,9 +5,9 @@ type BuyProps = {};
 
 const BuyContainer:FC = (props: BuyProps) => {
 
-  const getBooks = ():void => {
+  const getBooks = (exchange: string):void => {
     console.log('getbooks fired')
-    fetch('/api')
+    fetch(`/api/${exchange}`)
       .then((res) => res.json())
       .then((data) => {
         console.log('got something back?', data);
@@ -23,7 +23,10 @@ const BuyContainer:FC = (props: BuyProps) => {
         hello
       </div>
       <div>
-        <button onClick={getBooks}>get books</button>
+        <button onClick={() => {getBooks('polo')}}>get Poloniex books</button>
+      </div>
+      <div>
+        <button onClick={() => {getBooks('bitt')}}>get Bittrex books</button>
       </div>
     </>
   );
