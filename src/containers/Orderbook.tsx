@@ -1,32 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useInterval } from '../hooks/hooks';
 import BuyContainer from './BuyContainer';
 import SellContainer from './SellContainer';
 
-export interface OrderbookProps {}
+type OrderbookProps = {}
 
-function Orderbook(props: OrderbookProps) {
-
+const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
   const [bids, setBids] = useState(null);
   const [asks, setAsks] = useState(null);
 
+  // Fetch combined orderbooks for BTC_ETH markets
   const getBooks = ():void => {
     fetch(`/api`)
     .then((res) => res.json())
     .then((data) => {
-      console.log('got something back?', data);
+      console.log('data response ',data)
       if (data.bid && data.ask) {
-        setBids(data.bids);
-        setAsks(data.asks);
-      } else {
-        console.log('no data returned')
+        setBids(data.bid);
+        setAsks(data.ask);
       }
-    }).catch((e) => {
-      console.log('there was an error', e);
+    }).catch((error) => {
+      console.log('there was an error in /api fetch', error);
     })
   }
 
-  // useInterval(getBooks, 5000);
+  // getBooks at an interval
+  useInterval(getBooks, 5000);
 
   return (
     <>

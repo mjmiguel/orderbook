@@ -15,7 +15,7 @@ apiRouter.get('/', bittrexController.getBooks, poloniexController.getBooks, (req
     ask: [...poloniexData.ask, ...bittrexData.ask]
   };
   
-  res.status(200).json({ data });
+  res.status(200).json(data);
 });
 
 export default apiRouter;
