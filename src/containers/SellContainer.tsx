@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 import { orderbookContext } from './Orderbook';
 import Table from '../components/Table';
 
-type SellProps = {};
+export type SellProps = {};
 
 const SellContainer:FC<SellProps> = (props: SellProps) => {
 

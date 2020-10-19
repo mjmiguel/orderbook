@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SellContainer /> should snapshot should match previous 1`] = `<div />`;
