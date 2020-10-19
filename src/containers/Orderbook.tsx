@@ -36,10 +36,13 @@ const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
   return (
     <>
       <h1>ORDERBOOK</h1>
+      <div className="main-container">
       <orderbookContext.Provider value={{bids, asks}}>
         <BuyContainer />
         <SellContainer />
       </orderbookContext.Provider>
+
+      </div>
     </>
   );
 }
