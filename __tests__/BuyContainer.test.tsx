@@ -17,12 +17,13 @@ function renderBuyContainer(props: BuyProps = {}) {
 
 describe("<BuyContainer />", () => {
 
-  test("should render an h2 element with BUY", async () => {
-    const { container, getByText } = await renderBuyContainer();
-    // expect(getByText('BUY')).toBeInTheDocument();
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <h2>BID</h2>
-    `);
- 
+  test(`should render an element containing "BID and match snapshot"`, async () => {
+    const { getByText } = await renderBuyContainer();
+    expect(getByText("BID")).toBeInTheDocument();
+  });
+
+  test(`should snapshot should match previous`, async () => {
+    const { container } = await renderBuyContainer();
+    expect(container).toMatchSnapshot();
   });
 });
