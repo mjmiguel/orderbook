@@ -4,4 +4,4 @@ COPY ./ /usr/src/app
 RUN npm install
 RUN npm run build
 EXPOSE 3000
-ENTRYPOINT [ "ts-node", "./server/server.ts" ]
+ENTRYPOINT [ "npm", "start" ]
