@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Knewave&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap);
 
+
 /* ---------- WHOLE DOCUMENT ---------- */
 
 html, body {
@@ -20,7 +21,7 @@ body {
 /* ---------- HEADINGS ---------- */
 
 .h1, .h2, .h3, h1, h2, h3 {
-	margin-top: 10px;
+  margin-top: 10px;
   margin-bottom: 10px;
   color: blueviolet !important;
   font-family: $Monoton;
@@ -29,17 +30,31 @@ body {
 
 /* ---------- CONTAINERS ---------- */
 
+@media screen and (min-width: 1075px) {
+  .main-container {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 1075px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
 .main-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid $body-text;
   border-radius: 15px;
-  margin: 30px 30px 30px 30px;
-  padding: 20px 20px 20px 20px;
+  margin: 10px 30px 10px 30px;
+  padding: 1px 20px 20px 20px;
 }
 
 /* ---------- IMAGES ---------- */
@@ -68,10 +83,9 @@ tr {
 
 .table-header {
   text-align: center;
-	font-size: 2rem;
-	font-family: 'Knewave', cursive;
+  font-size: 2rem;
+  font-family: 'Knewave', cursive;
 }
-
 
 .table-row:hover {
   color: lawngreen;
@@ -79,17 +93,17 @@ tr {
 
 /* ---------- BUTTONS ---------- */
 
-button, input[type=button], input[type=submit] {
-  background-color: transparent;
-  border-color: blueviolet;
-  font-size: 2rem;
-  font-family: 'Knewave', cursive;
-  color: #ff745e;
-  border-radius: 10px;
-  :hover {
-    color: $hover-color;
-  }
-}
+// button, input[type=button], input[type=submit] {
+//   background-color: transparent;
+//   border-color: blueviolet;
+//   font-size: 2rem;
+//   font-family: 'Knewave', cursive;
+//   color: #ff745e;
+//   border-radius: 10px;
+//   :hover {
+//     color: $hover-color;
+//   }
+// }
 
 
 
