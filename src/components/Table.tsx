@@ -34,19 +34,21 @@ const Table: FC<TableProps> = ({ data, bookType }: TableProps) => {
   }, [data]);
 
   return (
+    <div >
       <table>
-        <tbody>
+        <thead>
           <tr>
             <th className="header">Exchange</th>
             <th className="header">Quantity</th>
             <th className="header">Price</th>
             <th className="header">Total</th>
           </tr>
-          <tr>
-            {rowArray || 'Loading'}
-          </tr>
+        </thead>
+        <tbody>
+          {rowArray || 'Loading'}
         </tbody>
       </table>
+    </div>
   )
 };
 
