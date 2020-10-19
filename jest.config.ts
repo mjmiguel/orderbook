@@ -2,7 +2,6 @@ import type { Config } from '@jest/types';
 import { defaults } from 'jest-config';
 
 const config: Config.InitialOptions = {
-  roots: ["<rootDir>"],
 
   // transformations for Typescript
   transform: {
@@ -12,7 +11,6 @@ const config: Config.InitialOptions = {
   // Add cleanup for React Testing Library
   // Add extra Jest assertions
   setupFilesAfterEnv: [
-    "@testing-library/react/cleanup-after-each",
     "@testing-library/jest-dom/extend-expect"
   ],
 
