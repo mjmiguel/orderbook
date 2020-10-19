@@ -3,6 +3,8 @@ import { useInterval } from '../hooks/hooks';
 import BuyContainer from './BuyContainer';
 import SellContainer from './SellContainer';
 
+export const orderbookContext = React.createContext(null)
+
 type OrderbookProps = {}
 
 const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
@@ -14,7 +16,6 @@ const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
     fetch(`/api`)
     .then((res) => res.json())
     .then((data) => {
-      console.log('data response ',data)
       if (data.bid && data.ask) {
         setBids(data.bid);
         setAsks(data.ask);
@@ -30,8 +31,10 @@ const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
   return (
     <>
       <h1>ORDERBOOK</h1>
-      <BuyContainer bids={bids} />
-      <SellContainer asks={asks}/>
+      <orderbookContext.Provider value={{bids, asks}}>
+        <BuyContainer />
+        <SellContainer />
+      </orderbookContext.Provider>
     </>
   );
 }

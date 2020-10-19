@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
 import { exchangeObject } from '../../types/types';
 
-type SellProps = {
-  asks: exchangeObject[];
-};
+type SellProps = {};
 
-const SellContainer:FC<SellProps> = ({ asks }: SellProps) => {
+const SellContainer:FC<SellProps> = (props: SellProps) => {
   return (
     <>
       <h1>Sell Container</h1>
