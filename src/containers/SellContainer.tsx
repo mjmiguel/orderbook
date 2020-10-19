@@ -10,8 +10,7 @@ const SellContainer:FC<SellProps> = (props: SellProps) => {
 
   return (
     <>
-      <h1>Sell Container</h1>
-      <div>
+      <div className="container">
         <h2>Ask</h2>
         <Table data={asks} bookType="ask"/>
       </div>
