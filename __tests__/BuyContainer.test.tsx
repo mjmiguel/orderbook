@@ -16,14 +16,15 @@ function renderBuyContainer(props: BuyProps = {}) {
 }
 
 describe("<BuyContainer />", () => {
+  
+  // get rendered component
+  const { container, getByText } = renderBuyContainer();
 
   test(`should render an element containing "BID"`, async () => {
-    const { getByText } = await renderBuyContainer();
     expect(getByText("BID")).toBeInTheDocument();
   });
 
   test(`should snapshot should match previous`, async () => {
-    const { container } = await renderBuyContainer();
     expect(container).toMatchSnapshot();
   });
 });

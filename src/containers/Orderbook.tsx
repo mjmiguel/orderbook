@@ -5,7 +5,7 @@ import SellContainer from './SellContainer';
 
 export const orderbookContext = React.createContext(null)
 
-type OrderbookProps = {}
+export type OrderbookProps = {}
 
 const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
   const [bids, setBids] = useState(null);

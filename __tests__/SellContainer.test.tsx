@@ -17,13 +17,14 @@ function renderSellContainer(props: SellProps = {}) {
 
 describe("<SellContainer />", () => {
 
+  // get rendered component
+  const { container, getByText } =  renderSellContainer();
+
   test(`should render an element containing "ASK`, async () => {
-    const { getByText } = await renderSellContainer();
     expect(getByText('ASK')).toBeInTheDocument();
   });
 
   test(`should snapshot should match previous`, async () => {
-    const { container } = await renderSellContainer();
     expect(container).toMatchSnapshot();
   });
 });
