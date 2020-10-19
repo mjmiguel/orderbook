@@ -7,7 +7,7 @@ type TableRowProps = {
 
 const TableRow: FC<TableRowProps> = ({ data }: TableRowProps) => {
   return (
-    <tr>
+    <tr className="table-row">
       <td>{data.exchange}</td>
       <td>{data.quantity}</td>
       <td>{data.price}</td>

@@ -39,10 +39,10 @@ const Table: FC<TableProps> = ({ data, bookType }: TableProps) => {
       <table>
         <thead>
           <tr>
-            <th className="header">Exchange</th>
-            <th className="header">Quantity</th>
-            <th className="header">Price</th>
-            <th className="header">Total</th>
+            <th className="table-header"></th>
+            <th className="table-header">Quantity</th>
+            <th className="table-header">Price</th>
+            <th className="table-header">Total</th>
           </tr>
         </thead>
         <tbody>

@@ -60,20 +60,21 @@ a {
 
 /* ---------- TABLE ---------- */
 
-.header {
-  text-align: center;
-	font-size: 2rem;
-	font-family: 'Knewave', cursive;
-}
-
 tr {
   text-align: center;
   font-family: $Averia;
   font-size: 1.3rem;
 }
-tr:hover {
-  font-size: 1.6rem;
-  font-weight: bold;
+
+.table-header {
+  text-align: center;
+	font-size: 2rem;
+	font-family: 'Knewave', cursive;
+}
+
+
+.table-row:hover {
+  color: lawngreen;
 }
 
 /* ---------- BUTTONS ---------- */
