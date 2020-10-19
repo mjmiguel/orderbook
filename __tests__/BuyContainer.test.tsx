@@ -17,7 +17,7 @@ function renderBuyContainer(props: BuyProps = {}) {
 
 describe("<BuyContainer />", () => {
 
-  test(`should render an element containing "BID and match snapshot"`, async () => {
+  test(`should render an element containing "BID"`, async () => {
     const { getByText } = await renderBuyContainer();
     expect(getByText("BID")).toBeInTheDocument();
   });
