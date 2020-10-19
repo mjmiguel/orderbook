@@ -11,9 +11,8 @@ const bids = useContext(orderbookContext)['bids'];
 
   return (
     <>
-      <h1>Buy Container</h1>
-      <div>
-        <h2>Bid</h2>
+      <div className="container">
+        <h2>BID</h2>
         <Table data={bids} bookType="bid"/>
       </div>
     </>

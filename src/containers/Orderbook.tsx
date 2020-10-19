@@ -36,10 +36,13 @@ const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
   return (
     <>
       <h1>ORDERBOOK</h1>
+      <h3>BTC_ETH</h3>
+      <div className="main-container">
       <orderbookContext.Provider value={{bids, asks}}>
         <BuyContainer />
         <SellContainer />
       </orderbookContext.Provider>
+      </div>
     </>
   );
 }
