@@ -4,7 +4,7 @@
   "description": "Combined orderbook using Bittrex and Poloniex",
   "scripts": {
     "build": "webpack --mode production --config webpack.prod.ts",
-    "start": "node server/server.js",
+    "start": "ts-node server/server.ts",
     "dev": "concurrently \"nodemon ./server/server.ts\" \"webpack-dev-server --open --inline --colors --hot --mode development --config webpack.dev.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
