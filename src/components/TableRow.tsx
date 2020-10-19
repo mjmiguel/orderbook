@@ -1,5 +1,4 @@
-import React, { FC, useContext } from 'react';
-import { orderbookContext } from '../containers/Orderbook';
+import React, { FC } from 'react';
 import { exchangeObject } from '../../types/types';
 
 type TableRowProps = {
@@ -12,7 +11,7 @@ const TableRow: FC<TableRowProps> = ({ data }: TableRowProps) => {
       <td>{data.exchange}</td>
       <td>{data.quantity}</td>
       <td>{data.price}</td>
-      <td>{data.price * data.quantity}</td>
+      <td>{(data.price * data.quantity).toFixed(8)}</td>
     </tr>
   );
 };
