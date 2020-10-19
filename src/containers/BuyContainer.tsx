@@ -1,22 +1,20 @@
 import React, { FC, useContext } from 'react';
 import { orderbookContext } from './Orderbook';
-// import Table from '../components/Table';
+import Table from '../components/Table';
 
 
-type BuyProps = {
-  // bids: exchangeObject[];
-};
+type BuyProps = {};
 
 const BuyContainer: FC<BuyProps> = (props: BuyProps) => {
 
-const bids = useContext(orderbookContext);
+const bids = useContext(orderbookContext)['bids'];
 
   return (
     <>
       <h1>Buy Container</h1>
       <div>
         <h2>Bid</h2>
-        
+        <Table data={bids} bookType="bid"/>
       </div>
     </>
   );

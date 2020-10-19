@@ -25,7 +25,12 @@ const Orderbook: FC<OrderbookProps> = (props: OrderbookProps) => {
     })
   }
 
-  // getBooks at an interval
+  // run once before interval starts
+  useEffect(() => {
+    if (!bids && !asks) getBooks()
+  }, [])
+
+  // getBooks() at an interval
   useInterval(getBooks, 5000);
 
   return (

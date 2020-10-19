@@ -1,31 +1,22 @@
-import React, { FC } from 'react';
-import { exchangeObject } from '../../types/types';
+import React, { FC, useContext } from 'react';
+import { orderbookContext } from './Orderbook';
+import Table from '../components/Table';
 
 type SellProps = {};
 
 const SellContainer:FC<SellProps> = (props: SellProps) => {
+
+  const asks = useContext(orderbookContext)['asks'];
+
   return (
     <>
       <h1>Sell Container</h1>
       <div>
-      <h2>Ask</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th className="header"><h3>Price</h3></th>
-              <br />
-              <br />
-              <th className="header"><h3>Amount</h3></th>
-              <br />
-              <br />
-              <th className="header"><h3>Total</h3></th>
-            </tr>
-          </tbody>
-        </table>
+        <h2>Ask</h2>
+        <Table data={asks} bookType="ask"/>
       </div>
     </>
   );
-
 }
 
 export default SellContainer;
