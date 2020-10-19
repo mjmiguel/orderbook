@@ -25,7 +25,7 @@ const Table: FC<TableProps> = ({ data, bookType }: TableProps) => {
 
       if (top20) {
         // add best 25 to table
-        let rowArray = top20.reduce((acc, curr, idx) => {
+        let rowArray = top20.reduce((acc, curr) => {
           acc.push(<TableRow key={curr.price+curr.quantity} data={curr} />);
             return acc;
         }, []);
@@ -46,7 +46,7 @@ const Table: FC<TableProps> = ({ data, bookType }: TableProps) => {
           </tr>
         </thead>
         <tbody>
-          {rowArray || 'Loading'}
+          {rowArray || <tr><td>Loading...</td></tr>}
         </tbody>
       </table>
     </div>
