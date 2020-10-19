@@ -5,11 +5,7 @@ type BuyProps = {
   bids: exchangeObject[];
 };
 
-BuyContainer.defaultProps = {
-  bids: []
-}
-
-const BuyContainer: FC<BuyProps & BuyContainer.defaultProps> = ({ bids }: BuyProps) => {
+const BuyContainer: FC<BuyProps> = ({ bids }: BuyProps) => {
 
   return (
     <>
@@ -33,5 +29,6 @@ const BuyContainer: FC<BuyProps & BuyContainer.defaultProps> = ({ bids }: BuyPro
     </>
   );
 }
+
 
 export default BuyContainer;
