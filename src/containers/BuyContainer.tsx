@@ -3,7 +3,7 @@ import { orderbookContext } from './Orderbook';
 import Table from '../components/Table';
 
 
-type BuyProps = {};
+export type BuyProps = {};
 
 const BuyContainer: FC<BuyProps> = (props: BuyProps) => {
 
