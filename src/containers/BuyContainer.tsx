@@ -1,36 +1,24 @@
-import React, { FC } from 'react';
-import fetch from 'node-fetch';
+import React, { FC, useContext } from 'react';
+import { orderbookContext } from './Orderbook';
+import Table from '../components/Table';
+
 
 type BuyProps = {};
 
-const BuyContainer:FC = (props: BuyProps) => {
+const BuyContainer: FC<BuyProps> = (props: BuyProps) => {
 
-  const getBooks = (exchange: string):void => {
-    console.log('getbooks fired')
-    fetch(`/api/${exchange}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('got something back?', data);
-      }).catch((e) => {
-        console.log('there was an error', e);
-      })
-  }
+const bids = useContext(orderbookContext)['bids'];
 
   return (
     <>
       <h1>Buy Container</h1>
       <div>
-        hello
-      </div>
-      <div>
-        <button onClick={() => {getBooks('polo')}}>get Poloniex books</button>
-      </div>
-      <div>
-        <button onClick={() => {getBooks('bitt')}}>get Bittrex books</button>
+        <h2>Bid</h2>
+        <Table data={bids} bookType="bid"/>
       </div>
     </>
   );
-
 }
+
 
 export default BuyContainer;
