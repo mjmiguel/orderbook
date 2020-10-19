@@ -6,7 +6,8 @@
     "build": "webpack --mode production --config webpack.prod.ts",
     "start": "ts-node server/server.ts",
     "dev": "concurrently \"nodemon ./server/server.ts\" \"webpack-dev-server --open --inline --colors --hot --mode development --config webpack.dev.ts\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose",
+    "test:watch": "jest --watch"
   },
   "author": "mjmguel",
   "license": "MIT",
