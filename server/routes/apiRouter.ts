@@ -5,12 +5,17 @@ const apiRouter = Router();
 import poloniexController from '../controllers/poloniexController';
 import bittrexController from '../controllers/bittrexController';
 
-apiRouter.get('/polo', poloniexController.getBooks, (req: Request, res: Response): void => {
-  res.status(200).json({ message: 'got poloniex data', data: res.locals.poloniex });
-});
+apiRouter.get('/', bittrexController.getBooks, poloniexController.getBooks, (req: Request, res: Response): void => {
+  // merge bid and ask arrays from Poloniex and Bittrex
+  const poloniexData = res.locals.poloniex; 
+  const bittrexData = res.locals.bittrex;
 
-apiRouter.get('/bitt', bittrexController.getBooks, (req: Request, res: Response): void => {
-  res.status(200).json({ message: 'got bittrex data', data: res.locals.bittrex });
+  const data = {
+    bid: [...poloniexData.bid, ...bittrexData.bid],
+    ask: [...poloniexData.ask, ...bittrexData.ask]
+  };
+  
+  res.status(200).json({ data });
 });
 
 export default apiRouter;

@@ -11,7 +11,7 @@ function Orderbook(props: OrderbookProps) {
   const [asks, setAsks] = useState(null);
 
   const getBooks = ():void => {
-    fetch(`/api/polo`)
+    fetch(`/api`)
     .then((res) => res.json())
     .then((data) => {
       console.log('got something back?', data);
