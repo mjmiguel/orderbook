@@ -13,18 +13,18 @@ const Table: FC<TableProps> = ({ data, bookType }: TableProps) => {
 
   useEffect(() => {
     if (data) {
-      // sort best 25
+      // sort best 20
       let top20;
-      // sort low to high for asks
-      // sort high to low for bids
       if (bookType === 'ask') {
+        // sort low to high for asks
         top20 = data.sort((a:exchangeObject, b:exchangeObject) => a.price - b.price ).slice(0,20);
       } else if (bookType === 'bid') {
+        // sort high to low for bids
         top20 = data.sort((a:exchangeObject, b:exchangeObject) => b.price - a.price ).slice(0,20);
       }
 
       if (top20) {
-        // add best 25 to table
+        // add best 20 to table
         let rowArray = top20.reduce((acc, curr) => {
           acc.push(<TableRow key={curr.price+curr.quantity} data={curr} />);
             return acc;
