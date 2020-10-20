@@ -14,6 +14,7 @@ interface apiResponseObject {
 
 // Compose new object from data recieved from API
 const processResponse = (jsonObj: apiResponseObject): processedData  => {
+  // result to be passed to apiRouter and processed
   let resultObj: processedData = {
     bid: [],
     ask: []
@@ -42,10 +43,7 @@ const processResponse = (jsonObj: apiResponseObject): processedData  => {
 }
 
 const bittrexController = {
-  
   getBooks: (req: Request, res: Response, next: NextFunction): void => {
-    console.log('got to getbooks')
-  // add variable for different exchanges
     fetch('https://api.bittrex.com/v3/markets/ETH-BTC/orderbook')
       .then((res) => res.json())
       .then((data) => {
