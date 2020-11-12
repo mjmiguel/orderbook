@@ -13,6 +13,7 @@ interface apiResponseObject {
 
 // Compose new object from data recieved from API
 const processResponse = (jsonObj: apiResponseObject): processedData  => {
+  // result to be passed to apiRouter and processed
   let resultObj: processedData = {
     bid: [],
     ask: []
@@ -43,8 +44,6 @@ const processResponse = (jsonObj: apiResponseObject): processedData  => {
 const poloniexController = {
   
   getBooks: (req: Request, res: Response, next: NextFunction): void => {
-    console.log('got to getbooks')
-  // TODO: add variables for different markets
     fetch('https://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_ETH&depth=25')
       .then((res) => res.json())
       .then((data) => {
